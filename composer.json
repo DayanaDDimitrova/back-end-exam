@@ -19,8 +19,12 @@
         "drupal/core-composer-scaffold": "^10.1",
         "drupal/core-project-message": "^10.1",
         "drupal/core-recommended": "^10.1",
+        "drupal/dropzonejs": "^2.8",
         "drupal/gin": "^3.0@rc",
         "drupal/gin_toolbar": "^1.0@rc",
+        "drupal/media_upload": "^3.0",
+        "drupal/paragraphs": "^1.16",
+        "drupal/video_embed_field": "^2.5",
         "drush/drush": "^11.6"
     },
     "conflict": {
