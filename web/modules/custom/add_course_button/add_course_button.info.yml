@@ -1,0 +1,7 @@
+name: Add Course Button
+type: module
+description: Add Course button in block
+package: Custom
+core_version_requirement: ^9 || ^10
+dependencies:
+  - block
