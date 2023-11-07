@@ -24,7 +24,9 @@
         "drupal/gin_toolbar": "^1.0@rc",
         "drupal/media_upload": "^3.0",
         "drupal/paragraphs": "^1.16",
+        "drupal/profile": "^1.7",
         "drupal/video_embed_field": "^2.5",
+        "drupal/webform": "^6.2",
         "drush/drush": "^11.6"
     },
     "conflict": {
