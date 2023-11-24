@@ -1,0 +1,8 @@
+course_registration.example:
+  path: '/course-registration'
+  defaults:
+    _title: 'Course registration'
+    _form: '\Drupal\course_registration\Form\RegistrationForm'
+  requirements:
+    _permission: 'access content'
+

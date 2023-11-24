@@ -1,0 +1,5 @@
+name: Course registration
+type: module
+description: Provides a form for students to register for courses
+package: Custom
+core_version_requirement: ^9 || ^10

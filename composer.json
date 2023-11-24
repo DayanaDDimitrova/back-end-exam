@@ -25,14 +25,16 @@
         "drupal/media_upload": "^3.0",
         "drupal/paragraphs": "^1.16",
         "drupal/profile": "^1.7",
+        "drupal/registration_role": "^2.0",
         "drupal/video_embed_field": "^2.5",
         "drupal/webform": "^6.2",
+        "drupal/rules": "^3.0",
         "drush/drush": "^11.6"
     },
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {

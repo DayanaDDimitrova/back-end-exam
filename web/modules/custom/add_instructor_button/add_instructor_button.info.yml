@@ -1,6 +1,6 @@
 name: Add Instructor Button
 type: module
-description: Add Instructor butoon in a block
+description: Add Instructor button in a block
 package: Custom
 core_version_requirement: ^9 || ^10
 dependencies:
