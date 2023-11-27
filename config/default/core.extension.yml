@@ -1,6 +1,8 @@
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
+  add_course_button: 0
+  add_instructor_button: 0
   automated_cron: 0
   big_pipe: 0
   block: 0
@@ -10,11 +12,16 @@ module:
   comment: 0
   config: 0
   contact: 0
+  content_restrict: 0
   contextual: 0
+  course_registration: 0
   datetime: 0
   dblog: 0
+  dropzonejs: 0
   dynamic_page_cache: 0
   editor: 0
+  entity: 0
+  entity_reference_revisions: 0
   field: 0
   field_ui: 0
   file: 0
@@ -22,7 +29,11 @@ module:
   help: 0
   history: 0
   image: 0
+  layout_builder: 0
+  layout_discovery: 0
   link: 0
+  media: 0
+  media_upload: 0
   menu_link_content: 0
   menu_ui: 0
   node: 0
@@ -30,6 +41,8 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  registration_role: 0
+  rules: 0
   search: 0
   shortcut: 0
   sqlite: 0
@@ -38,10 +51,17 @@ module:
   text: 0
   toolbar: 0
   tour: 0
+  typed_data: 0
   update: 0
   user: 0
+  vem_migrate_oembed: 0
+  video_embed_field: 0
+  video_embed_media: 0
   views_ui: 0
+  webform: 0
+  webform_ui: 0
   views: 10
+  paragraphs: 11
   standard: 1000
 theme:
   olivero: 0

@@ -1,0 +1,29 @@
+uuid: 67d9a550-809f-414a-b40f-8550ebc524e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_referance3
+    - node.type.course
+    - taxonomy.vocabulary.department
+id: node.course.field_referance3
+field_name: field_referance3
+entity_type: node
+bundle: course
+label: Department
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      department: department
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

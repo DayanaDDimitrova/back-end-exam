@@ -1,0 +1,42 @@
+uuid: f76a465a-a674-47c1-9261-c1a35f3d3c91
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.user.full
+    - field.field.user.user.field_date_of_birth
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
+  module:
+    - datetime
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: mZLyuWM9CQx2ZJVqFGSbzgFnHzudVbHBYmdU256A5Wk
+id: user.user.full
+targetEntityType: user
+bundle: user
+mode: full
+content:
+  field_date_of_birth:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  member_for:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  field_first_name: true
+  field_last_name: true
+  student_profile_type_profiles: true

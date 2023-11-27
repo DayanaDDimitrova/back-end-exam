@@ -1,0 +1,29 @@
+uuid: d944cf3c-fcd0-4eb6-a859-af2297bfa998
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_referance2
+    - node.type.course
+    - taxonomy.vocabulary.level
+id: node.course.field_referance2
+field_name: field_referance2
+entity_type: node
+bundle: course
+label: Level
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      level: level
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

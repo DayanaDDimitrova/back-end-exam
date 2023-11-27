@@ -1,0 +1,42 @@
+uuid: f38f3877-2c71-45f4-8f88-4eae9c2710fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.course.field_description
+    - field.field.node.course.field_end_date
+    - field.field.node.course.field_instructor_of_the_course
+    - field.field.node.course.field_name
+    - field.field.node.course.field_paragraph
+    - field.field.node.course.field_referance
+    - field.field.node.course.field_referance2
+    - field.field.node.course.field_referance3
+    - field.field.node.course.field_referance_resourses
+    - field.field.node.course.field_start_date
+    - field.field.node.course.field_user
+    - node.type.course
+  module:
+    - user
+id: node.course.teaser
+targetEntityType: node
+bundle: course
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_description: true
+  field_end_date: true
+  field_instructor_of_the_course: true
+  field_name: true
+  field_paragraph: true
+  field_referance: true
+  field_referance2: true
+  field_referance3: true
+  field_referance_resourses: true
+  field_start_date: true
+  field_user: true

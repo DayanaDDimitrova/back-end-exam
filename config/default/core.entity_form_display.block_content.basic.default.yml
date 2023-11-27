@@ -4,9 +4,7 @@ status: true
 dependencies:
   config:
     - block_content.type.basic
-    - field.field.block_content.basic.body
-  module:
-    - text
+    - field.field.block_content.basic.field_content_in_a_block
 _core:
   default_config_hash: jAps3FCxvKecABS_tgExbhCZrBLQB3bNPWw18WjE3ss
 id: block_content.basic.default
@@ -14,15 +12,15 @@ targetEntityType: block_content
 bundle: basic
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: -4
+  field_content_in_a_block:
+    type: entity_reference_autocomplete
+    weight: 26
     region: content
     settings:
-      rows: 9
-      summary_rows: 3
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
       placeholder: ''
-      show_summary: false
     third_party_settings: {  }
   info:
     type: string_textfield
