@@ -1,0 +1,7 @@
+content_restrict.register_for_node:
+  path: '/node/register-for-course'
+  defaults:
+    _title: 'Register for course'
+    _form: 'Drupal\content_restrict\Form\RegisterForNode'
+  requirements:
+    _permission: 'access content'
