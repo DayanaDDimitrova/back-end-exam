@@ -1,0 +1,16 @@
+<?php
+
+use Drupal\custom_events\Event\NewBookingEvent;
+
+/**
+ * Implements hook_entity_insert() for booking entities.
+ */
+function custom_events_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
+
+  if ($entity->getEntityTypeId() === 'booking') {
+    $event = new NewBookingEvent('A new booking has been made.');
+    \Drupal::service('event_dispatcher')->dispatch(NewBookingEvent::NEW_BOOKING, $event);
+  }
+}
+
+

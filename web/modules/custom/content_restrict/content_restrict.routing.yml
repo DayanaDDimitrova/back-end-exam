@@ -6,3 +6,11 @@ content_restrict.register_for_node:
   requirements:
     _permission: 'access content'
 
+content_restrict2.registration_list:
+  path: '/registration-list'
+  defaults:
+    _controller: '\Drupal\content_restrict\Controller\RegistrationListController::content'
+    _title: 'User Registration List'
+  requirements:
+    _permission: 'administer site configuration'
+

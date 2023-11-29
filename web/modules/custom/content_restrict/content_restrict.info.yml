@@ -3,3 +3,5 @@ type: module
 description: restricts unregistered student to view nodes
 package: Custom
 core_version_requirement: ^9 || ^10
+dependencies:
+  - custom_events:custom_events

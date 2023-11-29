@@ -1,0 +1,6 @@
+services:
+  custom_events.event_subscriber:
+    class: Drupal\custom_events\EventSubscriber\NewBookingEventSubscriber
+    tags:
+      - { name: event_subscriber }
+

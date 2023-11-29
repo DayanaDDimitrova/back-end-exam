@@ -10,6 +10,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
+use Drupal\custom_events\Event\NewBookingEvent;
 
 
 
@@ -94,6 +95,9 @@ class RegisterForNode extends FormBase {
     else {
       $this->messenger->addError($this->t('Invalid course selected. Please try again.'));
     }
+    
+    $event = new NewBookingEvent('A new Student has registered for a course.(This is the form.)');
+    \Drupal::service('event_dispatcher')->dispatch($event,NewBookingEvent::NEW_BOOKING);
   }
 
   private function getNodeOptions($content_type) {
