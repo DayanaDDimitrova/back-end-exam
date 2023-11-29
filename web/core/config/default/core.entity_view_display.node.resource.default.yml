@@ -1,0 +1,56 @@
+uuid: 2cf41dd3-1b0e-4102-911b-c3eef124e44c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.resource.field_description_resource
+    - field.field.node.resource.field_file_upload
+    - field.field.node.resource.field_referance_courses
+    - field.field.node.resource.field_title
+    - node.type.resource
+  module:
+    - file
+    - text
+    - user
+id: node.resource.default
+targetEntityType: node
+bundle: resource
+mode: default
+content:
+  field_description_resource:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_file_upload:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_referance_courses:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_title:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

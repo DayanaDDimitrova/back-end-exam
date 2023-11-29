@@ -1,0 +1,27 @@
+uuid: e042385e-8ce9-4b35-a55f-28c0a47fcc05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_date_of_birth
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
+  module:
+    - user
+_core:
+  default_config_hash: mZLyuWM9CQx2ZJVqFGSbzgFnHzudVbHBYmdU256A5Wk
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  member_for:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_date_of_birth: true
+  field_first_name: true
+  field_last_name: true
+  student_profile_type_profiles: true

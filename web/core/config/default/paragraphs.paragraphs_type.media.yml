@@ -1,0 +1,10 @@
+uuid: 43a1e106-788a-4ce6-a8b0-b86cc68660e5
+langcode: en
+status: true
+dependencies: {  }
+id: media
+label: Media
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

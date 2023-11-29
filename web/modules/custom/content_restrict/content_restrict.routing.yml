@@ -5,3 +5,4 @@ content_restrict.register_for_node:
     _form: 'Drupal\content_restrict\Form\RegisterForNode'
   requirements:
     _permission: 'access content'
+

@@ -1,0 +1,92 @@
+uuid: b6308cd9-f76f-4b6e-a8de-e6cf11795b9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.audio
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
+    - node.type.course
+    - node.type.instructor
+    - node.type.resource
+  module:
+    - comment
+    - contextual
+    - dropzonejs
+    - file
+    - media
+    - media_upload
+    - node
+    - system
+    - tour
+    - video_embed_field
+_core:
+  default_config_hash: NtMgnXp0miNtJhag07NSjwdCm4zpJwhlDFs1HgyL4wI
+id: content_editor
+label: 'Content editor'
+weight: -9
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access content'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access tour'
+  - 'access user profiles'
+  - 'change own username'
+  - 'create audio media'
+  - 'create course content'
+  - 'create document media'
+  - 'create image media'
+  - 'create instructor content'
+  - 'create media'
+  - 'create remote_video media'
+  - 'create resource content'
+  - 'create video media'
+  - 'delete any course content'
+  - 'delete any instructor content'
+  - 'delete any resource content'
+  - 'delete course revisions'
+  - 'delete instructor revisions'
+  - 'delete media'
+  - 'delete own audio media'
+  - 'delete own course content'
+  - 'delete own document media'
+  - 'delete own files'
+  - 'delete own image media'
+  - 'delete own instructor content'
+  - 'delete own remote_video media'
+  - 'delete own resource content'
+  - 'delete own video media'
+  - 'delete resource revisions'
+  - 'dropzone upload files'
+  - 'edit any course content'
+  - 'edit any instructor content'
+  - 'edit any resource content'
+  - 'edit own audio media'
+  - 'edit own comments'
+  - 'edit own course content'
+  - 'edit own document media'
+  - 'edit own image media'
+  - 'edit own instructor content'
+  - 'edit own remote_video media'
+  - 'edit own resource content'
+  - 'edit own video media'
+  - 'never autoplay videos'
+  - 'revert all revisions'
+  - 'revert course revisions'
+  - 'revert instructor revisions'
+  - 'revert resource revisions'
+  - 'select account cancellation method'
+  - 'update media'
+  - 'upload media'
+  - 'view all revisions'
+  - 'view course revisions'
+  - 'view instructor revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view resource revisions'
+  - 'view the administration theme'
+  - 'view user email addresses'

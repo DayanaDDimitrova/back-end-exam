@@ -1,0 +1,38 @@
+uuid: cded7a5a-a5df-45ba-acde-0f5f9d0d1908
+langcode: en
+status: true
+dependencies: {  }
+id: user_register
+label: 'User register'
+events:
+  -
+    event_name: 'rules_entity_insert:user'
+description: ''
+tags: {  }
+config_version: '3'
+expression:
+  id: rules_rule
+  uuid: 55a6ccf1-d550-4317-9237-881af0be8902
+  weight: 0
+  conditions:
+    id: rules_and
+    uuid: 50722051-c64a-42ba-8f45-6251226b5f7f
+    weight: 0
+    conditions: {  }
+  actions:
+    id: rules_action_set
+    uuid: c9fce092-9480-4273-b674-dd85e314d852
+    weight: 0
+    actions:
+      -
+        id: rules_action
+        uuid: 586b5826-f304-499c-ac12-9d03832555a2
+        weight: 0
+        action_id: rules_page_redirect
+        context_values:
+          url: /node
+        context_mapping: {  }
+        context_processors:
+          url:
+            rules_tokens: {  }
+        provides_mapping: {  }

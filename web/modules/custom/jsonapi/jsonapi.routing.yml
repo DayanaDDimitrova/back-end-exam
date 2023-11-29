@@ -1,0 +1,8 @@
+jsonapi.example:
+  path: '/api'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\jsonapi\Controller\JsonapiController::build'
+  requirements:
+    _permission: 'access content'
+

@@ -1,0 +1,29 @@
+uuid: 573d1f80-a800-49d0-8124-6ce642c9c5ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_course_i_theach
+    - node.type.course
+    - node.type.instructor
+id: node.instructor.field_course_i_theach
+field_name: field_course_i_theach
+entity_type: node
+bundle: instructor
+label: 'Course I theach.'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      course: course
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

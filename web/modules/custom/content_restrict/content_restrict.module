@@ -1,7 +1,7 @@
 <?php
 
 use Drupal\Core\Access\AccessResult;
-use Drupal\node\NodeInterface;
+
 
 /**
  * @file
@@ -21,13 +21,10 @@ use Drupal\node\NodeInterface;
       return AccessResult::forbidden()->addCacheableDependency($node);
     }
   }
-
-
   return AccessResult::forbidden();
 }
 
 function user_is_registered_for_node($account, $node) {
-  // Check if the field exists on the node.
   if ($node->hasField('field_user')) {
     $field_registered_users = $node->get('field_user')->referencedEntities();
 

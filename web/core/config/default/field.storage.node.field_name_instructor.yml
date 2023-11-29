@@ -1,0 +1,20 @@
+uuid: 2379d657-30fe-4b40-af32-a7933a7b794e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_name_instructor
+field_name: field_name_instructor
+entity_type: node
+type: text
+settings:
+  max_length: 50
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

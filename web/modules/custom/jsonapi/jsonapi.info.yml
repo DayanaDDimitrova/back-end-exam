@@ -1,0 +1,5 @@
+name: JsonApi
+type: module
+description: Provides an API to retrieve a list of courses.
+package: Custom
+core_version_requirement: ^9 || ^10

@@ -5,10 +5,11 @@ namespace Drupal\content_restrict\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
-use Drupal\Core\Messenger\MessengerInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Url;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Url;
 
 
 
@@ -39,7 +40,7 @@ class RegisterForNode extends FormBase {
       $container->get('messenger')
     );
   }
-/*---------------------------------------------------------------------------------*/
+
   /**
    * {@inheritdoc}
    */
@@ -77,29 +78,20 @@ class RegisterForNode extends FormBase {
   }
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    // Get the selected node ID.
     $selectedNodeId = $form_state->getValue('selected_node');
-
-    // Load the selected node.
     $selectedNode = Node::load($selectedNodeId);
-
-    // Check if the selected node exists and is of the expected type.
     if ($selectedNode && $selectedNode->getType() == 'course') {
-      // Get the currently logged-in user (assuming the user is a student).
       $user = \Drupal::currentUser();
 
-      // Add the student to the course. This is just an example; you may need to implement your own logic.
-      // This could involve creating a reference field on the course node to store the students.
-      $selectedNode->field_students[] = ['target_id' => $user->id()];
+      $selectedNode->field_registered_user[] = ['target_id' => $user->id()];
       $selectedNode->save();
 
-      // Display a confirmation message.
+
       $this->messenger->addMessage($this->t('You have successfully registered for the course.'));
       $url = Url::fromRoute('entity.node.canonical', ['node' => $selectedNodeId]);
       $form_state->setResponse(new RedirectResponse($url->toString()));
     }
     else {
-      // Handle the case where the selected node is not found or is not a course.
       $this->messenger->addError($this->t('Invalid course selected. Please try again.'));
     }
   }
@@ -120,7 +112,7 @@ class RegisterForNode extends FormBase {
     }
 
     return $options;
-
   }
+
 }
 
