@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.course.field_referance2
     - field.field.node.course.field_referance3
     - field.field.node.course.field_referance_resourses
+    - field.field.node.course.field_registered_user
     - field.field.node.course.field_start_date
     - field.field.node.course.field_user
     - node.type.course
@@ -38,5 +39,6 @@ hidden:
   field_referance2: true
   field_referance3: true
   field_referance_resourses: true
+  field_registered_user: true
   field_start_date: true
   field_user: true

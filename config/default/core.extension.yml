@@ -14,7 +14,6 @@ module:
   contact: 0
   content_restrict: 0
   contextual: 0
-  course_registration: 0
   datetime: 0
   dblog: 0
   dropzonejs: 0
@@ -29,6 +28,7 @@ module:
   help: 0
   history: 0
   image: 0
+  jsonapi: 0
   layout_builder: 0
   layout_discovery: 0
   link: 0
