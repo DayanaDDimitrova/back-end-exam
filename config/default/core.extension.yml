@@ -21,6 +21,7 @@ module:
   dropzonejs: 0
   dynamic_page_cache: 0
   editor: 0
+  enrollments: 0
   entity: 0
   entity_reference_revisions: 0
   field: 0
@@ -44,8 +45,10 @@ module:
   path: 0
   path_alias: 0
   registration_role: 0
+  rest: 0
   rules: 0
   search: 0
+  serialization: 0
   shortcut: 0
   sqlite: 0
   system: 0
