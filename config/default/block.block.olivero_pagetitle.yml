@@ -7,7 +7,7 @@ dependencies:
 id: olivero_pagetitle
 theme: olivero
 region: content_above
-weight: -7
+weight: -9
 provider: null
 plugin: page_title_block
 settings:

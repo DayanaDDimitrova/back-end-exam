@@ -185,9 +185,9 @@ display:
       menu:
         type: normal
         title: Instructors
-        weight: -48
+        weight: -49
         menu_name: main
-        parent: 'menu_link_content:b2eeafb8-c61a-484e-bcbd-366af9e17b5b'
+        parent: 'views_view:views.frontpage.page_1'
     cache_metadata:
       max-age: -1
       contexts:

@@ -11,7 +11,7 @@ dependencies:
 id: olivero_addcoursebutton
 theme: olivero
 region: content_above
-weight: -5
+weight: -7
 provider: null
 plugin: add_course_button
 settings:

@@ -11,7 +11,7 @@ dependencies:
 id: olivero_addinstructorbutton
 theme: olivero
 region: content_above
-weight: -4
+weight: -6
 provider: null
 plugin: add_instructor_button
 settings:

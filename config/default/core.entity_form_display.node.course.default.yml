@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.course.field_referance2
     - field.field.node.course.field_referance3
     - field.field.node.course.field_referance_resourses
-    - field.field.node.course.field_registered_user
     - field.field.node.course.field_start_date
     - field.field.node.course.field_user
     - node.type.course
@@ -101,16 +100,6 @@ content:
     weight: 16
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_registered_user:
-    type: entity_reference_autocomplete
-    weight: 26
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   field_start_date:
     type: datetime_default

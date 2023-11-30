@@ -1,0 +1,25 @@
+uuid: 214c272c-bac7-4da0-9c49-d329f048602f
+langcode: en
+status: true
+dependencies:
+  module:
+    - add_recource_button
+    - system
+  theme:
+    - olivero
+id: olivero_addrecourcebutton
+theme: olivero
+region: content_above
+weight: -5
+provider: null
+plugin: add_recource_button
+settings:
+  id: add_recource_button
+  label: 'Add Recource Button'
+  label_display: '0'
+  provider: add_recource_button
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /edit-resource

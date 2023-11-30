@@ -216,7 +216,7 @@ display:
         type: normal
         title: Home
         description: ''
-        weight: 0
+        weight: -48
         enabled: true
         expanded: false
         menu_name: main

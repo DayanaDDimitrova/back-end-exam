@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.course.field_referance2
     - field.field.node.course.field_referance3
     - field.field.node.course.field_referance_resourses
-    - field.field.node.course.field_registered_user
     - field.field.node.course.field_start_date
     - field.field.node.course.field_user
     - node.type.course
@@ -97,14 +96,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 9
-    region: content
-  field_registered_user:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 11
     region: content
   field_start_date:
     type: datetime_default

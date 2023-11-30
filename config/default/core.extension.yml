@@ -3,6 +3,7 @@ _core:
 module:
   add_course_button: 0
   add_instructor_button: 0
+  add_recource_button: 0
   automated_cron: 0
   big_pipe: 0
   block: 0
@@ -14,6 +15,7 @@ module:
   contact: 0
   content_restrict: 0
   contextual: 0
+  custom_events: 0
   datetime: 0
   dblog: 0
   dropzonejs: 0
