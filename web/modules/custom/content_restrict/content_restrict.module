@@ -2,26 +2,25 @@
 
 use Drupal\Core\Access\AccessResult;
 
-
-/**
- * @file
- * Primary module hooks for content restrict module.
- */
-
-// content_restrict/content_restrict.module
-
 /**
  * Implements hook_node_access().
  */
  function content_restrict_node_access($node, $op, $account) {
-  if (!$account->isAnonymous() && $account->hasRole('student')) {
-    if (user_is_registered_for_node($account, $node)) {
-      return AccessResult::allowed();
-    } else {
-      return AccessResult::forbidden()->addCacheableDependency($node);
-    }
+
+  if ($account->hasRole('content editor')) {
+    return AccessResult::allowed();
+  }
+
+  if ($account->isAnonymous() && $account->hasRole('student')) {
+
+      if (user_is_registered_for_node($account, $node)) {
+        return AccessResult::allowed();
+      } else {
+        return AccessResult::forbidden()->addCacheableDependency($node);
   }
   return AccessResult::forbidden();
+  }
+
 }
 
 function user_is_registered_for_node($account, $node) {
@@ -37,3 +36,4 @@ function user_is_registered_for_node($account, $node) {
 
   return false;
 }
+

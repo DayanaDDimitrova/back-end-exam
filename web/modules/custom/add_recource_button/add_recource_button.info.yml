@@ -1,0 +1,7 @@
+name: Add Recource Button
+type: module
+description: Add recource button in a block
+package: Custom
+core_version_requirement: ^9 || ^10
+dependencies:
+  - block

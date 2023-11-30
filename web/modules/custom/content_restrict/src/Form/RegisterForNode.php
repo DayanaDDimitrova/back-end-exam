@@ -79,6 +79,7 @@ class RegisterForNode extends FormBase {
   }
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
+
     $selectedNodeId = $form_state->getValue('selected_node');
     $selectedNode = Node::load($selectedNodeId);
     if ($selectedNode && $selectedNode->getType() == 'course') {
@@ -95,8 +96,8 @@ class RegisterForNode extends FormBase {
     else {
       $this->messenger->addError($this->t('Invalid course selected. Please try again.'));
     }
-    
-    $event = new NewBookingEvent('A new Student has registered for a course.(This is the form.)');
+
+    $event = new NewBookingEvent('A new Student has registered for a course.:)');
     \Drupal::service('event_dispatcher')->dispatch($event,NewBookingEvent::NEW_BOOKING);
   }
 
