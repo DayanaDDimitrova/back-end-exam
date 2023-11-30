@@ -1,0 +1,7 @@
+enrollments.students_courses:
+  path: '/enrollments/students-courses'
+  defaults:
+    _controller: '\Drupal\enrollments\Controller\EnrollmentsController::studentsCourses'
+    _title: 'Students and Courses'
+  requirements:
+    _permission: 'access content'

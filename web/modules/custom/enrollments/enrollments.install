@@ -1,0 +1,76 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the enrollments module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function enrollments_install() {
+  \Drupal::messenger()->addStatus(__FUNCTION__);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function enrollments_uninstall() {
+
+  \Drupal::messenger()->addStatus(__FUNCTION__);
+}
+
+/**
+ * Implements hook_schema().
+ */
+function enrollments_schema() {
+  $schema['enrollments'] = [
+    'description' => 'Table for storing student enrollments.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique identifier for each enrollment.',
+      ],
+      'student_name' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'description' => 'Name of the student.',
+      ],
+      'course_name' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'description' => 'Name of the course.',
+      ],
+      'enrollment_timestamp' => [
+        'type' => 'timestamp',
+        'not null' => TRUE,
+        'description' => 'Timestamp when the enrollment occurred.',
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Implements hook_requirements().
+ */
+function enrollments_requirements($phase) {
+  $requirements = [];
+
+  if ($phase == 'runtime') {
+    $value = mt_rand(0, 100);
+    $requirements['enrollments_status'] = [
+      'title' => t('enrollments status'),
+      'value' => t('enrollments value: @value', ['@value' => $value]),
+      'severity' => $value > 50 ? REQUIREMENT_INFO : REQUIREMENT_WARNING,
+    ];
+  }
+
+  return $requirements;
+}

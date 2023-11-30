@@ -2,9 +2,10 @@
 
 namespace Drupal\jsonapi\Controller;
 
+use Drupal\Component\Serialization\Json;
 use Drupal\Core\Controller\ControllerBase;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
+
 
 /**
  * Returns responses for JsonApi routes.
@@ -12,63 +13,61 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class JsonapiController extends ControllerBase {
 
   /**
-   * The database service.
-   *
-   * @var \Drupal\Core\Database\Driver\mysql\Connection
+   * Returns nodes of the "course" content type in JSON format.
    */
-  protected $database;
 
-  /**
-   * JsonapiController constructor.
-   *
-   * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
-   *   The container.
-   */
-  public function __construct(ContainerInterface $container) {
-    $this->database = $container->get('database');
+public function getNodes() {
+
+    $query = \Drupal::entityQuery('node')
+    ->condition('type', 'course')
+    ->accessCheck(TRUE);
+    $nids = $query->execute();
+
+  $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+
+  $data = [];
+  foreach ($nodes as $node) {
+    $data[] = [
+      'id' => $node->id(),
+      'courseName' => $node->getTitle(),
+      'description' => $node->get('field_description')->value,
+      'startDate' => strtotime($node->get('field_start_date')->value),
+      'endDate' => strtotime($node->get('field_end_date')->value),
+       'instructor' => [
+         'name' => $node->get('field_name')->value,
+        //  'bio' => $node->get('field_bio')->value,
+        //  'contactInfo' => $node->get('field_email')->value,
+
+       ],
+      'subject' => $node->get('field_referance')->value,
+      'level' => $node->get('field_referance2')->value,
+      'department' => $node->get('field_referance3')->value,
+      'resources' => $this->getResources($node),
+    ];
   }
+  $format = 'json';
+  $context = ['plugin_id' => 'entity'];
+  
+  $response = new JsonResponse(
+    \Drupal::service('serializer')->serialize($data, $format, $context),
+    200,
+    ['Content-Type' => 'application/json'],
+    true // Allow JSON
+  );
 
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container) {
-    return new static($container);
-  }
+  return $response;
+}
 
-  /**
-   * Builds the response.
-   */
-  public function build() {
-    $query = $this->database->select('your_course_table', 'c')
-      ->fields('c')
-      ->execute();
-
-    $courses = [];
-    foreach ($query as $row) {
-      $courses[] = [
-        "courseName" => $row->course_name,
-        "description" => $row->description,
-        "startDate" => strtotime($row->start_date),
-        "endDate" => strtotime($row->end_date),
-        "instructor" => [
-          "name" => $row->instructor_name,
-          "bio" => $row->instructor_bio,
-          "contactInfo" => $row->instructor_contact,
-        ],
-        "subject" => $row->subject,
-        "level" => $row->level,
-        "department" => $row->department,
-        "resources" => [
-          [
-            "title" => $row->resource_title,
-            "description" => $row->resource_description,
-            "url" => $row->resource_url,
-          ],
-          // Add more resources as needed
-        ],
+  private function getResources($node) {
+    $resources = $node->get('field_referance_resourses')->getValue();
+    $formattedResources = [];
+    foreach ($resources as $resource) {
+      $formattedResources[] = [
+        'title' => $resource['title'],
+        'description' => $resource['description'],
       ];
     }
-
-    return new JsonResponse($courses);
+    return $formattedResources;
   }
+
 }

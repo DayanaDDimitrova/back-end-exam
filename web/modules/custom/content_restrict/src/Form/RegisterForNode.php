@@ -79,15 +79,21 @@ class RegisterForNode extends FormBase {
   }
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
-
     $selectedNodeId = $form_state->getValue('selected_node');
     $selectedNode = Node::load($selectedNodeId);
+
     if ($selectedNode && $selectedNode->getType() == 'course') {
       $user = \Drupal::currentUser();
 
       $selectedNode->field_registered_user[] = ['target_id' => $user->id()];
       $selectedNode->save();
 
+      $student_name = $user->getDisplayName();
+      $course_name = $selectedNode->getTitle();
+
+      \Drupal::database()->insert('enrollments')
+      ->fields(['student_name' => $student_name, 'course_name' => $course_name])
+      ->execute();
 
       $this->messenger->addMessage($this->t('You have successfully registered for the course.'));
       $url = Url::fromRoute('entity.node.canonical', ['node' => $selectedNodeId]);
@@ -119,5 +125,19 @@ class RegisterForNode extends FormBase {
     return $options;
   }
 
+
+  function content_restrict_form_submit($form, &$form_state) {
+  $course_name = $form_state->getValue('course_name');
+  $student_name = \Drupal::currentUser()->getDisplayName();
+
+  \Drupal::database()->insert('enrollments')
+    ->fields([
+      'student_name' => $student_name,
+      'course_name' => $course_name,
+      'enrollment_timestamp' => \Drupal::time()->getRequestTime(),
+    ])
+    ->execute();
 }
 
+
+}

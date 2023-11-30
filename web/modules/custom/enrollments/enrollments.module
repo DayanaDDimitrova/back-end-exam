@@ -1,0 +1,33 @@
+<?php
+
+
+// //  function theme_your_module_students_courses($variables) {
+// //   $output = '';
+
+// //   foreach ($variables['results'] as $result) {
+// //     $output .= '<div>' . $result->student_name . ' - ' . $result->course_name . '</div>';
+// //   }
+
+// //   return $output;
+// // }
+
+
+// /**
+//  * Implements hook_form_FORM_ID_alter() for your course selection form.
+//  */
+// function enrollments_form_your_course_selection_form_alter(&$form, &$form_state, $form_id) {
+//   // Add a custom submit handler to the form.
+//   $form['#submit'][] = 'your_module_course_selection_form_submit';
+// }
+
+// /**
+//  * Form submission handler for the course selection form.
+//  */
+// function your_module_course_selection_form_submit($form, &$form_state) {
+//   $course_name = $form_state->getValue('course_name');
+//   $student_name = \Drupal::currentUser()->getDisplayName();
+
+//   \Drupal::database()->insert('enrollments')
+//     ->fields(['student_name' => $student_name, 'course_name' => $course_name])
+//     ->execute();
+// }
