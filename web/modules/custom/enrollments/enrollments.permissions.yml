@@ -1,0 +1,4 @@
+administer enrollments configuration:
+  title: 'Administer enrollments configuration'
+  description: 'Optional description.'
+  restrict access: true

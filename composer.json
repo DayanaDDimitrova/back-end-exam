@@ -23,6 +23,7 @@
         "drupal/dropzonejs": "^2.8",
         "drupal/gin": "^3.0@rc",
         "drupal/gin_toolbar": "^1.0@rc",
+        "drupal/login_destination": "^2.0@beta",
         "drupal/media_upload": "^3.0",
         "drupal/paragraphs": "^1.16",
         "drupal/profile": "^1.7",

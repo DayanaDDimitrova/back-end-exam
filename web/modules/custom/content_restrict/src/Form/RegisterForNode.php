@@ -61,11 +61,11 @@ class RegisterForNode extends FormBase {
       '#required' => TRUE,
     ];
 
-    $form['message'] = [
-      '#type' => 'textarea',
-      '#title' => $this->t('Message'),
-      '#required' => TRUE,
-    ];
+    // $form['message'] = [
+    //   '#type' => 'textarea',
+    //   '#title' => $this->t('Message'),
+    //   '#required' => TRUE,
+    // ];
 
     $form['actions'] = [
       '#type' => 'actions',

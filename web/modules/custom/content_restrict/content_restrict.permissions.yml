@@ -1,0 +1,4 @@
+administer content_restrict configuration:
+  title: 'Administer content_restrict configuration'
+  description: 'Optional description.'
+  restrict access: true

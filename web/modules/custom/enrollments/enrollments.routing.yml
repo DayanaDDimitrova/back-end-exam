@@ -4,4 +4,7 @@ enrollments.students_courses:
     _controller: '\Drupal\enrollments\Controller\EnrollmentsController::studentsCourses'
     _title: 'Students and Courses'
   requirements:
-    _permission: 'access content'
+    _permission: 'administer enrollments configuration'
+
+
+
