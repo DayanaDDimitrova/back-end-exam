@@ -1,16 +1,16 @@
-uuid: c0ee4e32-7d83-444f-b14f-1bf56519060b
+uuid: 48a160ef-5809-43c5-8c68-f125f8d5a9b9
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.main
     - user.role.administrator
-    - user.role.anonymous
+    - user.role.content_editor
+    - user.role.student
   module:
     - node
     - user
-id: custom_frontpage
-label: 'Custom frontpage'
+id: custom_frontpage2
+label: 'Custom frontpage2'
 module: views
 description: ''
 tag: ''
@@ -37,7 +37,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<h1>Welcome!\r\nPlease register or log in to continue!</h1>"
+            text: "<h1>Oops!</h1>\r\n<h3>- Knock knock! </h3>\r\n<h3>- Who's there? </h3>\r\n<h3>- Access! </h3>\r\n<h3>- Access who? </h3>\r\n<h3>- Access denied! </h3>\r\n<h3> You are a logged in or newly registered user, please navigate to another more boring page that has no jokes in it ;) .</h3>\r\n"
             make_link: false
             path: ''
             absolute: false
@@ -74,55 +74,6 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-        nothing_1:
-          id: nothing_1
-          table: views
-          field: nothing
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: custom
-          label: ''
-          exclude: false
-          alter:
-            alter_text: true
-            text: "<a href=\"/user/register\">Register</a>\r\n"
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
       pager:
         type: some
         options:
@@ -143,7 +94,8 @@ display:
         options:
           role:
             administrator: administrator
-            anonymous: anonymous
+            content_editor: content_editor
+            student: student
       cache:
         type: tag
         options: {  }
@@ -213,10 +165,10 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: welcome
+      path: oops
       menu:
-        type: normal
-        title: Welcome
+        type: none
+        title: Home2
         description: ''
         weight: -48
         expanded: false

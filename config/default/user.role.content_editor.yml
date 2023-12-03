@@ -15,6 +15,7 @@ dependencies:
     - comment
     - contextual
     - dropzonejs
+    - enrollments
     - file
     - media
     - media_upload
@@ -35,6 +36,7 @@ permissions:
   - 'access files overview'
   - 'access tour'
   - 'access user profiles'
+  - 'administer enrollments configuration'
   - 'change own username'
   - 'create audio media'
   - 'create course content'

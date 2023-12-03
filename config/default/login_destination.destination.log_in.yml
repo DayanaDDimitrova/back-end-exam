@@ -1,0 +1,18 @@
+uuid: 9a554637-6324-48db-9c30-4033cc4de23c
+langcode: en
+status: true
+dependencies: {  }
+name: log_in
+label: 'Log in'
+triggers:
+  login: login
+destination_path: 'internal:/node'
+pages_type: 0
+pages: ''
+language: ''
+roles:
+  administrator: administrator
+  content_editor: content_editor
+  student: student
+weight: 0
+enabled: true
